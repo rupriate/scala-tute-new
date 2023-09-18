@@ -1,11 +1,18 @@
-object second {
-  def filter_Even(numbers: List[Int]): List[Int] = {
-    numbers.filter(number => number % 2 == 0);
+import scala.util.Random
+
+object q2 {
+  def calculateSquare(numbers:List[Int]):List[Int]={
+    numbers.map((x:Int) => x*x)
+  }
+
+  def generateRandomNumbers(n: Int, range: Int): List[Int] = {
+    (1 to n).map(_ => Random.nextInt(range)).toList
   }
 
   def main(args: Array[String]): Unit = {
-    val input = List(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-    val output = filter_Even(input);
-    println(output);
+    val input = generateRandomNumbers(10, 10) 
+    val output = calculateSquare(input);
+    println(s"Input: $input")
+    println(s"Output: $output")
   }
 }
