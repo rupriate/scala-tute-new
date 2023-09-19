@@ -1,4 +1,4 @@
-object first {
+object q1 {
   class Rational(n: Int, d: Int) {
     require(d != 0)
 
