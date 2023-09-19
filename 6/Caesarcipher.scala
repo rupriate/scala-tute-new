@@ -1,4 +1,5 @@
 object Caesarcipher {
+  
   def encrypt(text: String, shift: Int): String = {
     text.map { char =>
       if (char.isLetter) {
@@ -17,22 +18,20 @@ object Caesarcipher {
   }
 
 
-  def cipher(data: String, func: (String, Int) => String, shift: Int): String = {
-    func(data, shift)
-  }
-
   def main(args: Array[String]): Unit = {
-    println("Enter: ")
+    println("Enter a String :")
     var str=scala.io.StdIn.readLine()
-    val shift = 1
+
+    println("Enter the shift: ")
+    var shift=scala.io.StdIn.readInt()
 
 
     val eText = encrypt(str, shift)
-    print("Encrypted: " + eText)
-    print("      ")
+    print("Encrypted: " + eText+"\n")
+
 
 
     val dText = decrypt(eText, shift)
-    println("Decrypted: " + dText)
+    println("Decrypted: " + dText+"\n")
   }
 }
